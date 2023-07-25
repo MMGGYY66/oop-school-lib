@@ -1,4 +1,6 @@
-class Person
+require_relative './name_able'
+
+class Person < Nameable
   attr_accessor :name, :age
   attr_reader :id
 
@@ -9,6 +11,11 @@ class Person
     @parent_permission = parent_permission
   end
 
+  # a method correct_name implemented to simply return the name attribute.
+  def correct_name
+    @name
+  end
+  
   def can_use_services?
     @parent_permission || of_age?
   end
