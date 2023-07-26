@@ -1,4 +1,6 @@
 require_relative 'name_able'
+require_relative 'trimmer_decorator '
+require_relative 'capital_decorator'
 
 class Person < Nameable
   attr_accessor :name, :age, :id
