@@ -27,5 +27,38 @@ class App
         @people.each do |person|
             puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, AGE: #{person.age}"        end
     end
+
+    # create a method to create a person
+    def create_person
+        print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+        person_type = gets.chomp.to_i
+        case person_type
+        when 1
+            print 'Age: '
+            person_age = gets.chomp.to_i
+            print 'Name: '
+            person_name = gets.chomp.to_s
+            print 'Has parent permission? [Y/N]: '
+            person_permission = gets.chomp.to_s.capitalize
+            @people << if person_permission == 'N'
+                        Student.new(person_age, classroom: nil, name: person_name, parent_permission: false)
+                        else
+                        Student.new(person_age, classroom: nil, name: person_name, parent_permission: true)
+                        end
+            puts 'Student created successfully'
+        when 2
+            print 'Age: '
+            person_age = gets.chomp.to_i
+            print 'Name: '
+            person_name = gets.chomp.to_s.capitalize
+            print 'Specialization: '
+            person_specialization = gets.chomp.to_s.capitalize
+            @people << Teacher.new(person_age, person_specialization, name: person_name)
+            puts 'Teacher created successfully'
+        else
+            puts 'Error: Enter a valid number'
+            create_person
+        end
+    end    
 end
 
