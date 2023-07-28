@@ -2,4 +2,16 @@
 # This file will be executed when you run the app
 # It should contain the following code:
 
+require_relative 'student'
+require_relative 'teacher'
+require_relative 'book'
+require_relative 'rental'
 
+class App
+  def initialize
+    puts 'Welcome to School Library App!'
+    @books = []
+    @people = []
+    @rentals = []
+  end
+  
