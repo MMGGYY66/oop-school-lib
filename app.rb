@@ -27,6 +27,9 @@ class App
 
   # create a method to create a person
   def create_student
+    print 'classroom: '
+    classroom = gets.chomp.to_s
+
     print 'Age: '
     person_age = gets.chomp.to_i
     print 'Name: '
@@ -34,9 +37,9 @@ class App
     print 'Has parent permission? [Y/N]: '
     person_permission = gets.chomp.to_s.capitalize
     @people << if person_permission == 'N'
-                 Student.new(person_age, classroom: nil, name: person_name, parent_permission: false)
+                 Student.new(classroom, person_age,  person_name, parent_permission: false)
                else
-                 Student.new(person_age, classroom: nil, name: person_name, parent_permission: true)
+                 Student.new(classroom, person_age, person_name, parent_permission: true)
                end
     puts 'Student created successfully'
   end
@@ -54,7 +57,7 @@ class App
       person_name = gets.chomp.to_s.capitalize
       print 'Specialization: '
       person_specialization = gets.chomp.to_s.capitalize
-      @people << Teacher.new(person_age, person_specialization, name: person_name)
+      @people << Teacher.new(person_age, person_specialization, person_name)
       puts 'Teacher created successfully'
     else
       puts 'Error: Enter a valid number'

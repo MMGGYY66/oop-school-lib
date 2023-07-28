@@ -28,6 +28,8 @@ def handle_menu(app)
     app.create_rental
   when 6
     app.list_rentals
+  when 7
+    abort
   else
     puts 'Error: Invalid number, try again'
   end
