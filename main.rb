@@ -1,14 +1,5 @@
-# Create a main.rb file
-# requires the other files
 require_relative 'app'
 
-# should do the following:
-#
-#     Present the user with a list of options to perform.
-#     Lets users choose an option.
-#     If needed, ask for parameters for the option.
-#     Have a way to quit the app.
-# Create a menu
 def menu
   puts ''
   puts 'Please choose an option by entering a number:'
