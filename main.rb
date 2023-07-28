@@ -1,6 +1,6 @@
 require_relative 'app'
 
-def menu
+def show_options
   puts ''
   puts 'Please choose an option by entering a number:'
   puts '1 - List all books'
@@ -12,35 +12,30 @@ def menu
   puts '7 - Exit'
 end
 
-# Create a method to handle the menu
-def handle_menu(app)
-  option = gets.chomp.to_i
-  case option
-  when 1
-    app.list_books
-  when 2
-    app.list_people
-  when 3
-    app.create_person
-  when 4
-    app.create_book
-  when 5
-    app.create_rental
-  when 6
-    app.list_rentals
-  when 7
-    abort
-  else
-    puts 'Error: Invalid number, try again'
-  end
-end
-
-# Create a main method to run the app
 def main
   app = App.new
+
   loop do
-    menu
-    handle_menu(app)
+    show_options
+    option = gets.chomp.to_i
+    case option
+    when 1
+      app.list_books
+    when 2
+      app.list_people
+    when 3
+      app.create_person
+    when 4
+      app.create_book
+    when 5
+      app.create_rental
+    when 6
+      app.list_rentals
+    when 7
+      abort
+    else
+      puts 'Error: Invalid number, try again'
+    end
   end
 end
 

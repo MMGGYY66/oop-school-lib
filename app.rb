@@ -37,7 +37,7 @@ class App
     print 'Has parent permission? [Y/N]: '
     person_permission = gets.chomp.to_s.capitalize
     @people << if person_permission == 'N'
-                 Student.new(classroom, person_age,  person_name, parent_permission: false)
+                 Student.new(classroom, person_age, person_name, parent_permission: false)
                else
                  Student.new(classroom, person_age, person_name, parent_permission: true)
                end
