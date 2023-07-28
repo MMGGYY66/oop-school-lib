@@ -59,6 +59,17 @@ class App
             puts 'Error: Enter a valid number'
             create_person
         end
-    end    
+    end
+    
+     # create a method to create a book
+     def create_book
+        print 'Title: '
+        book_title = gets.chomp.to_s.capitalize
+        print 'Author: '
+        book_author = gets.chomp.to_s.capitalize
+        @books << Book.new(book_title, book_author)
+        puts 'Book created succesfully'
+    end
+    
 end
 
