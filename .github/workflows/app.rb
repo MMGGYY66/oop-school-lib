@@ -18,6 +18,14 @@ class App
   # create a method to show List all books
     def list_books
         @books.each do |book|
-            puts "Title: #{book.title}, Author: #{book.author}"
+            puts "Title: \"#{book.title}\", Author: #{book.author}"
         end
     end
+
+    # create a method to show List all people
+    def list_people
+        @people.each do |person|
+            puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, AGE: #{person.age}"        end
+    end
+end
+
