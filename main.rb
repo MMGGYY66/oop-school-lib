@@ -42,5 +42,4 @@ def main
   end
 end
 
-# Call the main method to run the app
 main
