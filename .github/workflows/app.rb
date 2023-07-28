@@ -15,3 +15,9 @@ class App
     @rentals = []
   end
   
+  # create a method to show List all books
+    def list_books
+        @books.each do |book|
+            puts "Title: #{book.title}, Author: #{book.author}"
+        end
+    end
