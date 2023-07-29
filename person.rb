@@ -1,5 +1,5 @@
 require './name_able'
-require './trimmer_decorator '
+require './trimmer_decorator'
 require './capital_decorator'
 require './rental'
 
